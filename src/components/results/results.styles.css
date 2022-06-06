@@ -1,0 +1,5 @@
+.results {
+    height: 30vh;
+    background-color: var(--secondary-color);
+    width: 40vw;
+}

@@ -1,0 +1,9 @@
+.search-bar {
+    height: 10vh;
+    background-color: var(--secondary-color);
+    width: 40vw;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
