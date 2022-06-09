@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext";
 import { IUser, UserContextType } from "../../types/user/user";
+import axios from "axios";
 
 
 import "./search.styles.css";
@@ -11,38 +12,26 @@ const SearchBar: React.FC = () => {
   const [userData, setUserData] = useState<IUser | {login: ''}>();
   const [searchValue, setSearchValue] = useState('')
 
-  const handleForm = (e: React.FormEvent<HTMLInputElement>): void => {
-    setSearchValue(e.currentTarget.value);
+  const fetchData = () => {    
+    axios({
+      method: "get",
+      url: `https://api.github.com/users/${searchValue}`
+    }).then(res => {
+      setUserData(res.data)
+      context.saveUser({login: res.data.login})
+    })
   };
 
-  const handleSaveUser = (e: React.FormEvent, formData: IUser | any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    context.saveUser(formData);
-  };
-
-  useEffect(() => {
-    const url = "https://api.github.com/users/";
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${url}${searchValue}`);
-        const json = await response.json();
-        setUserData(json);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
     fetchData();
-  }, [searchValue]);  
-  
+  };
 
   return (
       <div className="search-bar">
         <form>
-          <label>Name</label>
-          <input type="text" name="search-field" onChange={handleForm}/>
-          <button>Search</button>
+          <input placeholder="user" type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+          <button onClick={(e) => handleSubmit(e)}>Search</button>
         </form>
       </div>
   );

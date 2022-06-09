@@ -1,13 +1,14 @@
 import React from "react";
 import HomePage from "./pages/homepage/homepage";
-
+import UserProvider from "./context/UserContext";
 
 function App() {
-  
   return (
     <div className="App">
       <>
-        <HomePage/>
+        <UserProvider>
+          <HomePage />
+        </UserProvider>
       </>
     </div>
   );
