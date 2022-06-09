@@ -118,3 +118,50 @@
 }
 
 
+@media (max-width: 1300px) {
+    .results {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 950px) {
+    .results {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .results {
+        width: 100vw;
+    }
+
+    .user-name {
+        font-size: 1.7rem;
+    }
+
+    .user-login {
+        font-size: 0.9rem;
+    }
+
+    .bio {
+        font-size: 0.8rem;
+    }
+
+    .stats {
+        width: 100%;
+    }
+
+    .stats-title {
+        font-size: 1rem;
+    }
+
+    .social {
+        width: 100%;
+    }
+
+    .social-item {
+        font-size: 0.7rem;
+    }
+}
+
+

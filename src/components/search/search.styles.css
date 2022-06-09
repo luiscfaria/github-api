@@ -59,8 +59,8 @@
 }
 
 .button {
-    width: 15%;
-    aspect-ratio: 2 / 1.1 ;
+    aspect-ratio: 2 / 1.1;
+    height: 80%;
     background-color: var(--tertiary-color);
     margin: 0 5px;
     color: var(--primary-color);
@@ -68,4 +68,31 @@
     border: 0;
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+    .search-bar {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 950px) {
+    .search-bar {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .search-bar {
+        width: 100vw;
+    }
+
+    .form {
+        margin: 0 5px;
+        width: 100%;
+    }
+
+    .button {
+        margin-right: 0;
+    }
 }

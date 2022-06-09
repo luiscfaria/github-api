@@ -25,7 +25,7 @@ const Results = () => {
             <div className="personnal">
               <div className="name">
                 <div className="user-name">{context.user.name}</div>
-                <div>@{context.user.login}</div>
+                <div className="user-login">@{context.user.login}</div>
               </div>
               <div className="bio">
                 {context.user.bio ? context.user.bio : "This user has no bio"}
