@@ -14,5 +14,6 @@ code {
 
 :root {
   --primary-color: #0D1117;  
-  --secondary-color: #161B22;  
+  --secondary-color: #161B22;
+  --tertiary-color: #FF9900;
 }

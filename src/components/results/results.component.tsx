@@ -9,7 +9,7 @@ const Results = () => {
   return (
     <div className="results">
       {context.user.error ? (
-        "Enter a valid user"
+        "User not found. Please enter a valid user"
       ) : !context.user.login ? (
         "Please Search a username"
       ) : (
@@ -24,7 +24,7 @@ const Results = () => {
           <div className="info">
             <div className="personnal">
               <div className="name">
-                <div>{context.user.name}</div>
+                <div className="user-name">{context.user.name}</div>
                 <div>@{context.user.login}</div>
               </div>
               <div className="bio">
@@ -33,15 +33,15 @@ const Results = () => {
             </div>
             <div className="stats">
               <div className="stats-box">
-                <div>Repos</div>
+                <div className="stats-title">Repos</div>
                 <div>{context.user.repos}</div>
               </div>
               <div className="stats-box">
-                <div>Followers</div>
+                <div className="stats-title">Followers</div>
                 <div>{context.user.followers}</div>
               </div>
               <div className="stats-box">
-                <div>Following</div>
+                <div className="stats-title">Following</div>
                 <div>{context.user.following}</div>
               </div>
             </div>
@@ -54,7 +54,10 @@ const Results = () => {
                 </div>
                 <div className="social-item">
                   <i  className="fa-brands fa-twitter-square"></i>{" "}
-                  {context.user.twitter ? "Go to Twitter Profile" : "Not Available"}
+                  {context.user.twitter ? 
+                  // "Go to Twitter Profile"                  
+                  <a style={{textDecoration: "none"}} target="_blank" href={`http://twitter.com/${context.user.twitter}`}>Open Twitter Profile</a>
+                  : "Not Available"}
                 </div>
               </div>
               <div className="social-box">

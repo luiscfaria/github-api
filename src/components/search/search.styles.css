@@ -1,10 +1,71 @@
 .search-bar {
-    height: 7vh;
+    font-family: "Coda", sans-serif;
+    height: 8vh;
     background-color: var(--secondary-color);
-    width: 25vw;
+    width: 30vw;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.8rem;
+}
+
+.form {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-group {
+    position: relative;
+    width: 60%;
+}
+
+.fa-solid {
+    font-size: 1.5rem;
+    color: var(--tertiary-color);
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    color: var(--tertiary-color);
+    background-color: transparent;
+    outline: 2px solid var(--tertiary-color);
+}
+
+.input-label {
+    color: rgb(197, 197, 197);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    transform-origin: left;
+    transition: transform .25s;
+}
+
+.input:focus+.input-label,
+.input:valid+.input-label {
+    transform: translate(0, -30px) scale(.8);
+    color: var(--tertiary-color);
+}
+
+.input:is(:focus, :valid) {
+    outline-color: var(--tertiary-color);
+}
+
+.button {
+    width: 15%;
+    aspect-ratio: 2 / 1.1 ;
+    background-color: var(--tertiary-color);
+    margin: 0 5px;
+    color: var(--primary-color);
+    font-weight: bolder;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
 }

@@ -1,12 +1,17 @@
 .results {
+    font-family: "Coda", sans-serif;
     height: 40vh;
     background-color: var(--secondary-color);
     width: 40vw;
     border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
-    color: white;
+    color: #fff;
+    width: 100%;
     padding: 0.5rem;
     height: 95%;
     display: flex;
@@ -39,13 +44,17 @@
 }
 
 .personnal {
-    margin-top: 1rem;
     width: 100%;
     height: 30%;
 }
 
 .name {
     margin: 0.5rem;
+}
+
+.user-name {
+    font-size: 2.2rem;
+    
 }
 
 .bio {
@@ -70,6 +79,11 @@
     align-items: center;
 }
 
+.stats-title {
+    color: var(--tertiary-color);
+    font-size: 1.3rem;
+}
+
 .social {
     margin-top: 1rem;
     width: 80%;
@@ -77,6 +91,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.social i {
+    margin: 0 3px;
+    font-size: 1.5rem;
+    color: rgb(187, 187, 187);
 }
 
 .social-box {
