@@ -18,7 +18,21 @@ const SearchBar: React.FC = () => {
       url: `https://api.github.com/users/${searchValue}`
     }).then(res => {
       setUserData(res.data)
-      context.saveUser({login: res.data.login})
+      context.saveUser({
+        login: res.data.login, 
+        avatarUrl: res.data.avatar_url,
+        name: res.data.name
+      })
+    }).catch(function (error) {
+      if (error.response) {
+        console.log(error.response.data);
+
+        context.handleError(true);
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log('Error', error.message);
+      }  
     })
   };
 

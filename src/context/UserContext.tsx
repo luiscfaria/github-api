@@ -14,15 +14,20 @@ const UserProvider: React.FC<IProps> = ({ children }) => {
     const saveUser = (user: IUser) => {
         const newUser: IUser = {
             login: user.login,
-            avatarUrl: user.avatarUrl
+            avatarUrl: user.avatarUrl,
+            name: user.name
         }
         setUser(newUser)
+    }
+
+    const handleError = (error: boolean) => {
+        setUser({...user, error: error})
     }
   
 
 
     return (
-        <UserContext.Provider value={{ user, saveUser }}>
+        <UserContext.Provider value={{ user, saveUser, handleError }}>
           {children}
         </UserContext.Provider>
       );

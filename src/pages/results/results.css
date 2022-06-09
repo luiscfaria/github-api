@@ -1,0 +1,9 @@
+.avatar {
+    width: 100px;
+}
+
+.user-avatar {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
