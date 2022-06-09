@@ -20,16 +20,54 @@ const Results = () => {
               src={context.user.avatarUrl}
               alt="user avatar"
             />
-            <div className="personnal">
-              <div className="name">
-                {context.user.name}
-                <br />
-                @{context.user.login}
-              </div>
-            </div>
           </div>
           <div className="info">
-
+            <div className="personnal">
+              <div className="name">
+                <div>{context.user.name}</div>
+                <div>@{context.user.login}</div>
+              </div>
+              <div className="bio">
+                {context.user.bio ? context.user.bio : "This user has no bio"}
+              </div>
+            </div>
+            <div className="stats">
+              <div className="stats-box">
+                <div>Repos</div>
+                <div>{context.user.repos}</div>
+              </div>
+              <div className="stats-box">
+                <div>Followers</div>
+                <div>{context.user.followers}</div>
+              </div>
+              <div className="stats-box">
+                <div>Following</div>
+                <div>{context.user.following}</div>
+              </div>
+            </div>
+            <div className="social">
+              <div className="social-box">
+                <div className="social-item">
+                  <i className="fa-brands fa-github-square"></i>
+                  <a style={{textDecoration: "none"}} target="_blank" href={context.user.github}>Open Github Profile</a>
+                  {/* {context.user.github} */}
+                </div>
+                <div className="social-item">
+                  <i  className="fa-brands fa-twitter-square"></i>{" "}
+                  {context.user.twitter ? "Go to Twitter Profile" : "Not Available"}
+                </div>
+              </div>
+              <div className="social-box">
+                <div className="social-item">
+                  <i className="fa-solid fa-location-dot"></i>{" "}
+                  {context.user.location}
+                </div>
+                <div className="social-item">
+                  <i className="fa-solid fa-building"></i>{" "}
+                  {context.user.company ? context.user.company : "Not Available"}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

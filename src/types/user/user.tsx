@@ -1,8 +1,16 @@
 export interface IUser {
     login: string;
     name?: string;
-    avatarUrl?: string
-    error?: boolean
+    avatarUrl?: string;
+    bio?: string
+    error?: boolean;
+    repos?: number;
+    followers?: number;
+    following?: number;
+    github?: string;
+    twitter?: string;
+    location?: string;
+    company?: string;
 }
 
 export type UserContextType = {

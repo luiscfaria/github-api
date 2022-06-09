@@ -21,7 +21,15 @@ const SearchBar: React.FC = () => {
       context.saveUser({
         login: res.data.login, 
         avatarUrl: res.data.avatar_url,
-        name: res.data.name
+        name: res.data.name,
+        bio: res.data.bio,
+        repos: res.data.public_repos,
+        followers: res.data.followers,
+        following: res.data.following,
+        github: res.data.html_url,
+        twitter: res.data.twitter_username,
+        location: res.data.location,
+        company: res.data.company
       })
     }).catch(function (error) {
       if (error.response) {
