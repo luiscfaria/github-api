@@ -10,7 +10,7 @@ This is project of an app that uses the Github API to fetch user data.
 
 ### Links
 
-- Live Site URL: https://
+- Live Site URL: https://luiscfaria.github.io/github-api/
 
 ## Built with
 

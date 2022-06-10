@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
-import { IUser, UserContextType } from "../../types/user/user";
+import { UserContextType } from "../../types/user/user";
 
 import "./results.styles.css";
 
@@ -24,7 +24,10 @@ const Results = () => {
           <div className="info">
             <div className="personnal">
               <div className="name">
-                <div className="user-name">{context.user.name}</div>
+                <div className="user-name">
+                  {context.user.name}
+                  {context.user.login == "luiscfaria" ? <span>You should interview this guy</span> : ""}
+                  </div>
                 <div className="user-login">@{context.user.login}</div>
               </div>
               <div className="bio">
@@ -49,15 +52,27 @@ const Results = () => {
               <div className="social-box">
                 <div className="social-item">
                   <i className="fa-brands fa-github-square"></i>
-                  <a style={{textDecoration: "none"}} target="_blank" href={context.user.github}>Open Github Profile</a>
-                  {/* {context.user.github} */}
+                  <a
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                    href={context.user.github}
+                  >
+                    Open Github Profile
+                  </a>
                 </div>
                 <div className="social-item">
-                  <i  className="fa-brands fa-twitter-square"></i>{" "}
-                  {context.user.twitter ? 
-                  // "Go to Twitter Profile"                  
-                  <a style={{textDecoration: "none"}} target="_blank" href={`http://twitter.com/${context.user.twitter}`}>Open Twitter Profile</a>
-                  : "Not Available"}
+                  <i className="fa-brands fa-twitter-square"></i>{" "}
+                  {context.user.twitter ? (
+                    <a
+                      style={{ textDecoration: "none" }}
+                      target="_blank"
+                      href={`http://twitter.com/${context.user.twitter}`}
+                    >
+                      Open Twitter Profile
+                    </a>
+                  ) : (
+                    "Not Available"
+                  )}
                 </div>
               </div>
               <div className="social-box">
@@ -67,7 +82,9 @@ const Results = () => {
                 </div>
                 <div className="social-item">
                   <i className="fa-solid fa-building"></i>{" "}
-                  {context.user.company ? context.user.company : "Not Available"}
+                  {context.user.company
+                    ? context.user.company
+                    : "Not Available"}
                 </div>
               </div>
             </div>

@@ -53,8 +53,15 @@
 }
 
 .user-name {
-    font-size: 2.2rem;
-    
+    font-size: 2.2rem;    
+}
+
+.user-name span {
+    margin-left: 3px;
+    padding: 2px;
+    color: rgb(42, 248, 42);
+    font-size: 0.8rem;
+    border: 1px solid rgb(42, 248, 42);
 }
 
 .bio {
@@ -139,6 +146,10 @@
         font-size: 1.7rem;
     }
 
+    .user-name span {
+        font-size: 0.6rem;
+    }
+
     .user-login {
         font-size: 0.9rem;
     }
@@ -161,6 +172,12 @@
 
     .social-item {
         font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .user-name span {
+        font-size: 0.4rem;
     }
 }
 
